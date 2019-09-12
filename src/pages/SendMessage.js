@@ -106,6 +106,61 @@ class SendMessage extends Component {
   }
 
   render() {
+
+    const sendNotification = () => {
+      console.log('sendNotification >>> ');
+      // fetch('http://jsonplaceholder.typicode.com/users')
+      //   .then(res => res.json())
+      //   .then((data) => {
+      //     console.log('data >>>' , data);
+      //   })
+      //   .catch(console.log);
+
+        fetch('https://api.line.me/v2/bot/message/push', {
+          method: 'POST',
+          headers: {
+            'Content-Type':'application/json',
+            'Authorization': 'Bearer TtoSPht3TZE2F6kgaz5a8EHIBAcrkNiwE5zGgxjbSYKXbAFVBK+DhZ/KCM9/cpVSIydAkrrjCwuP3JGW1SEpG/mXO5zqcAtYR96RsfTyhwOMfbcWw9Z8wvuOaFcchfgZCI4qf+ac5i/zG+sAU/ezDVGUYhWQfeY8sLGRXgo3xvw=',
+            'Access-Control-Allow-Origin':'*',
+            //  ... Auth
+          },
+          body: {
+           'to': 'U18796a1cdeaab4208f5da327e1c46bee',
+           'messages': [
+             {
+                "type":"text",
+                "text":"Hello, world1"
+             },
+             {
+              "type":"text",
+              "text":"Hello, world1"
+           },
+           ]
+          }
+         }).then(res => res.json())
+        .then((data) => {
+          console.log('data >>>' , data);
+        })
+        .catch(console.log);;
+    }
+
+//     curl -v -X POST https://api.line.me/v2/bot/message/push \
+// -H 'Content-Type:application/json' \
+// -H 'Authorization: Bearer {TtoSPht3TZE2F6kgaz5a8EHIBAcrkNiwE5zGgxjbSYKXbAFVBK+DhZ/KCM9/cpVSIydAkrrjCwuP3JGW1SEpG/mXO5zqcAtYR96RsfTyhwOMfbcWw9Z8wvuOaFcchfgZCI4qf+ac5i/zG+sAU/ezDVGUYhWQfeY8sLGRXgo3xvw=}' \
+// -d '{
+// "to": "U18796a1cdeaab4208f5da327e1c46bee",
+// "messages":[
+// {
+// "type":"text",
+// "text":"Hello, world1"
+// },
+// {
+// "type":"text",
+// "text":"Hello, world2"
+// }
+// ]
+// }'
+
     let formGroups = messageTypes.map((messageType, index) => {
       return (
         <div className="form-group" key={index}>
@@ -121,6 +176,16 @@ class SendMessage extends Component {
     });
     return (
       <div className="page-content">
+
+        <br />
+        <br />
+        <br />
+        <button type="button" onClick={() => sendNotification()}>Send Notification</button>
+        <br />
+        <br />
+        <br />
+
+
         <div className="col-lg-3" />
         <div className="col-lg-6">
           {formGroups}
