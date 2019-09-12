@@ -26,7 +26,7 @@ class AccountSummary extends Component {
           <div>
             <div className="login_page_profile">
               <div className="login_page_profile_bg">
-                <img width="130" className="avatar-img" alt="profile" src={this.state.profile.pictureUrl} />
+                <img width="130" className="avatar-img" alt="your profile" src={this.state.profile.pictureUrl} />
               </div>
             </div>
             <div className="account-summary_container">
