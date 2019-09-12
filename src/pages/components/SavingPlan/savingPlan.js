@@ -108,9 +108,9 @@ class SavingPlan extends Component {
       switch (this.state.componentRender) {
         case 'sp2':
         case 'sp3':
-        case 'sp4': 
+        case 'sp4':
         case 'sp5':
-        case 'sp9': 
+        case 'sp9':
         case 'sp10':
           return (
             <div className="footer">
@@ -119,7 +119,7 @@ class SavingPlan extends Component {
             </div>
           )
         case 'sp1':
-        case 'sp6': 
+        case 'sp6':
         case 'sp7':
           return (
             <div className="footer">
@@ -129,11 +129,11 @@ class SavingPlan extends Component {
         case 'sp8':
         case 'sp11':
           return (
-          <div className="footer">
-            <button className="sp1_button" onClick={() => gotoStep(nextStep)}>{buttonDisp1}</button>
-            <button className="sp1_button" onClick={() => gotoStep(backStep)}>{buttonDisp2}</button>
-            <button className="sp1_button" onClick={() => gotoStep(backStep)}>{buttonDisp2}</button>
-          </div>
+            <div className="footer">
+              <button className="sp1_button" onClick={() => gotoStep(nextStep)}>{buttonDisp1}</button>
+              <button className="sp1_button" onClick={() => gotoStep(backStep)}>{buttonDisp2}</button>
+              <button className="sp1_button" onClick={() => gotoStep(backStep)}>{buttonDisp2}</button>
+            </div>
           )
         default:
           return (
