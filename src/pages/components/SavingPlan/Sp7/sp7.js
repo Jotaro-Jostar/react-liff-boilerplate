@@ -5,13 +5,12 @@ class Sp7 extends Component {
   render() {
     return (
       <div className="wrap-sp7">
-        <div className="navi-header">Saving goal list</div>
+        <div className="navi-header">SAVING GOAL LIST</div>
+        <hr/>
         <div className="bg-red-savingPlan">
           Vacation trip
         </div>
       </div>
-
-  
     )
   }
 }

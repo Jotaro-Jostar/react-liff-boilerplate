@@ -25,7 +25,7 @@ class AccountSummary extends Component {
         <div className="account-summary">
           <div>
             <div className="login_page_profile">
-              <div className="login_page_profile_bg">
+              <div className="account-summary_profile-bg">
                 <img width="130" className="avatar-img" alt="your profile" src={this.state.profile.pictureUrl} />
               </div>
             </div>
@@ -37,14 +37,14 @@ class AccountSummary extends Component {
                 <span>Saving Account: 5,000 THB</span>
               </div>
               <div className="account-summary_textbox">
-                <span>Total Banlance: 15,000 THB</span>
-              </div>
-              <div className="wrap-button">
-                <button className="button-link" onClick={() => { liffHelper.closeWindow() }}>Back to main menu</button>
+                <span>Total Balance: 15,000 THB</span>
               </div>
             </div>
           </div>
         </div>
+        <footer className="footer">
+          <button className="account-summary_button" onClick={() => { liffHelper.closeWindow() }}>Back to main menu</button>
+        </footer>
       </div>
     );
   }
