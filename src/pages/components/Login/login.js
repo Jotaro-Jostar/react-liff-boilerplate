@@ -3,6 +3,7 @@ import man from '../../../assets/img/man.png';
 import liffHelper from '../../../utils/liffHelper';
 import ReactCodeInput from 'react-code-input';
 import { Button } from 'react-bootstrap';
+import { Redirect } from 'react-router-dom';
 import './style.css';
 
 class Login extends Component {
@@ -26,9 +27,15 @@ class Login extends Component {
     })
   }
 
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to='/accountSummary' />
+    }
+  }
+
   handlePIN(value) {
-    const mockPIN = "9999";
-    if (String(mockPIN) === String(value)) {
+    const mockPIN = "9999"
+    if (mockPIN === value) {
       this.setRedirect();
     }
   }
@@ -38,10 +45,11 @@ class Login extends Component {
     return (
       <div>
         <div className="login_page">
+          {this.renderRedirect()}
           <div className="container">
             <div className="login_page_profile">
               <div className="login_page_profile_bg">
-                <img width="130" className="avatar-img" alt="profile" src={this.state.profile.pictureUrl} />
+                <img width="130" className="avatar-img" alt="your profile" src={this.state.profile.pictureUrl} />
               </div>
             </div>
 
