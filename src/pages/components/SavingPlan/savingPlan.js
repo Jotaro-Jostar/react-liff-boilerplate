@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import liffHelper from '../../../utils/liffHelper';
 import Sp1 from './Sp1/sp1'
 import Sp2 from './Sp2/sp2'
 import Sp3 from './Sp3/sp3'
@@ -18,55 +17,62 @@ class SavingPlan extends Component {
     super(props);
     this.state = {
       componentRender: 'sp1',
+      goalName: '',
+      goalAmount: 0,
     }
   }
 
   render() {
-
     let backStep = 'sp1';
     let nextStep = 'sp2';
-    const renderComponent = () =>{
-
-      if(this.state.componentRender === 'sp1'){
+    let buttonDisp1 = "Next";
+    let buttonDisp2 = "Back";
+    const renderComponent = () => {
+      if (this.state.componentRender === 'sp1') {
         backStep = 'sp1';
         nextStep = 'sp2';
-      }else if(this.state.componentRender === 'sp2'){
+        buttonDisp1 = "Next";
+      } else if (this.state.componentRender === 'sp2') {
         backStep = 'sp1';
         nextStep = 'sp3';
+        buttonDisp1 = "Next";
       }
-      else if(this.state.componentRender === 'sp3'){
+      else if (this.state.componentRender === 'sp3') {
         backStep = 'sp2';
         nextStep = 'sp4';
+        buttonDisp1 = "Next";
       }
-      else if(this.state.componentRender === 'sp4'){
+      else if (this.state.componentRender === 'sp4') {
         backStep = 'sp3';
         nextStep = 'sp5';
+        buttonDisp1 = "Next";
       }
-      else if(this.state.componentRender === 'sp5'){
+      else if (this.state.componentRender === 'sp5') {
         backStep = 'sp4';
         nextStep = 'sp6';
+        buttonDisp1 = "Create Goal";
       }
-      else if(this.state.componentRender === 'sp6'){
+      else if (this.state.componentRender === 'sp6') {
         backStep = 'sp5';
         nextStep = 'sp7';
       }
-      else if(this.state.componentRender === 'sp7'){
+      else if (this.state.componentRender === 'sp7') {
         backStep = 'sp6';
         nextStep = 'sp8';
       }
-      else if(this.state.componentRender === 'sp8'){
+      else if (this.state.componentRender === 'sp8') {
         backStep = 'sp7';
         nextStep = 'sp9';
       }
-      else if(this.state.componentRender === 'sp9'){
+      else if (this.state.componentRender === 'sp9') {
         backStep = 'sp8';
         nextStep = 'sp10';
       }
-      else if(this.state.componentRender === 'sp10'){
+      else if (this.state.componentRender === 'sp10') {
         backStep = 'sp9';
         nextStep = 'sp11';
       }
-      else if(this.state.componentRender === 'sp11'){
+      else if (this.state.componentRender === 'sp11') {
         backStep = 'sp10';
         nextStep = 'sp1';
       }
@@ -92,44 +98,65 @@ class SavingPlan extends Component {
         case 'sp10':
           return <Sp10 />;
         case 'sp11':
-          return <Sp11 />;      
+          return <Sp11 />;
         default:
           return <Sp1 />;
-      } 
-    }
-    
-    const gotoStep = step => {
-      this.setState({componentRender: step});
-    }
-
-    const renderButton = () => {
-      if(this.state.componentRender === 'sp11'){
-        return (<div className="wrap-button">
-        <button className="button-link" onClick={() => { liffHelper.closeWindow() }}>Back to main menu</button>
-      </div>);
-      }else {
-        return (<div className="wrap-button">
-        <button className="button-link" onClick={() => gotoStep(nextStep)}>Next</button>
-        <button className="button-link" onClick={() => gotoStep(backStep)}>Back</button>
-      </div> );
       }
     }
 
-    return (
-      <div className="saving-plan">
-        <div className="col-lg-3" />
-          <div className="col-lg-6">
-
-            {renderComponent()}
-
-            <div className="wrap-sp1">
-              {renderButton()} 
+    const renderButton = () => {
+      switch (this.state.componentRender) {
+        case 'sp2':
+        case 'sp3':
+        case 'sp4':
+        case 'sp5':
+        case 'sp9':
+        case 'sp10':
+          return (
+            <div className="footer">
+              <button className="sp1_button" onClick={() => gotoStep(nextStep)}>{buttonDisp1}</button>
+              <button className="sp1_button" onClick={() => gotoStep(backStep)}>{buttonDisp2}</button>
             </div>
+          )
+        case 'sp1':
+        case 'sp6':
+        case 'sp7':
+          return (
+            <div className="footer">
+              <button className="sp1_button" onClick={() => gotoStep(nextStep)}>{buttonDisp1}</button>
+            </div>
+          )
+        case 'sp8':
+        case 'sp11':
+          return (
+            <div className="footer">
+              <button className="sp1_button" onClick={() => gotoStep(nextStep)}>{buttonDisp1}</button>
+              <button className="sp1_button" onClick={() => gotoStep(backStep)}>{buttonDisp2}</button>
+              <button className="sp1_button" onClick={() => gotoStep(backStep)}>{buttonDisp2}</button>
+            </div>
+          )
+        default:
+          return (
+            <div className="footer">
+              <button className="sp1_button" onClick={() => gotoStep(nextStep)}>{buttonDisp1}</button>
+              <button className="sp1_button" onClick={() => gotoStep(backStep)}>{buttonDisp2}</button>
+            </div>
+          );
+      }
+    }
+    const gotoStep = step => {
+      this.setState({ componentRender: step });
+    }
+
+    return (
+      <div>
+        <div className="topic-header">SAVING PLAN</div>
+        <div className="saving-plan">
+          <div className="col-lg-6">
+            {renderComponent()}
           </div>
-        <div>
-        
         </div>
-        <div className="col-lg-3" />
+        {renderButton()}
       </div>
     );
   }

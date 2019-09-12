@@ -18,7 +18,6 @@ class liffHelper {
             reject();
           }
         );
-        this.token = liff.getAccessToken();
       } else {
         resolve();
       }
@@ -57,10 +56,6 @@ class liffHelper {
 
   openWindow(url, external) {
     liff.openWindow({ url, external });
-  }
-
-  getToken() {
-    return this.token;
   }
 
   sendMessages(messages) {
