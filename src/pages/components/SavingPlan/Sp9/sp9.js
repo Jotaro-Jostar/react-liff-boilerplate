@@ -6,7 +6,7 @@ class Sp9 extends Component {
   render() {
     return (
       <div className="wrap-sp9">
-        <div className="navi-header">Goal Summary</div>
+        <div className="navi-header" tabindex="0" >Goal Summary</div>
         <div className="bg-red-savingPlan">
           <fieldset className="sp9_fieldset">
             <Form.Group as={Row}>
