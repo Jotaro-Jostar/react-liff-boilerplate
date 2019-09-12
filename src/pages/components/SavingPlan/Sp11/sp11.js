@@ -8,7 +8,7 @@ class Sp11 extends Component {
     const sp11_header = "Vacation Trip";
     return (
       <div className="wrap-sp11">
-      <div className="navi-header" alt={sp11_header}>{sp11_header}</div>
+      <div className="navi-header" tabindex="0"  alt={sp11_header}>{sp11_header}</div>
         <div className="sp8_container">
           <label alt={vacTrip1}>{vacTrip1}</label>
           <label alt={vacTrip2}>{vacTrip2}</label>

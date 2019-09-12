@@ -5,7 +5,7 @@ class Sp5 extends Component {
   render() {
     return (
       <div className="wrap-sp5">
-        <div className="navi-header">Goal Summary</div>
+        <div className="navi-header" tabindex="0" >Goal Summary</div>
         <div className="bg-red-savingPlan">
           You goal name is xxx <br />
           Your amount to save is xxx <br />
