@@ -2,29 +2,35 @@ import React, { Component } from 'react';
 import { Form, Row, Col } from 'react-bootstrap';
 import './style.css'
 
-class Sp9 extends Component {
+class Tf2 extends Component {
   render() {
     return (
-      <div className="wrap-sp9">
-        <div className="navi-header">GOAL SUMMARY</div>
-        <hr/>
+      <div className="wrap-tf9">
+        <div className="navi-header" tabindex="0" >Select Transfer Option</div>
         <div className="bg-red-savingPlan">
-          <fieldset className="sp9_fieldset">
+          <fieldset className="tf9_fieldset">
             <Form.Group as={Row}>
               <Col sm={12}>
                 <Form.Check
                   type="radio"
-                  label="Save 500 Bath per day for 10 day"
+                  label="to own saving account"
                   name="formHorizontalRadios"
                   id="formHorizontalRadios1"
                 />
                 <Form.Check
                   type="radio"
-                  label="Save 2,500 Bath per week for 2 week every Tuesday"
+                  label="to other bank account"
+                  name="formHorizontalRadios"
+                  id="formHorizontalRadios2"
+                />
+                <Form.Check
+                  type="radio"
+                  label="to promptpay"
                   name="formHorizontalRadios"
                   id="formHorizontalRadios2"
                 />
               </Col>
+              
             </Form.Group>
           </fieldset>
         </div>
@@ -33,4 +39,4 @@ class Sp9 extends Component {
   }
 }
 
-export default Sp9;
+export default Tf2;
