@@ -19,28 +19,28 @@ class MoneyTransfer extends Component {
 
     let backStep = 'tf1';
     let nextStep = 'tf2';
-    const renderComponent = () =>{
+    const renderComponent = () => {
 
-      if(this.state.componentRender === 'tf1'){
+      if (this.state.componentRender === 'tf1') {
         backStep = 'tf1';
         nextStep = 'tf2';
-      }else if(this.state.componentRender === 'tf2'){
+      } else if (this.state.componentRender === 'tf2') {
         backStep = 'tf1';
         nextStep = 'tf3';
       }
-      else if(this.state.componentRender === 'tf3'){
+      else if (this.state.componentRender === 'tf3') {
         backStep = 'tf2';
         nextStep = 'tf4';
       }
-      else if(this.state.componentRender === 'tf4'){
+      else if (this.state.componentRender === 'tf4') {
         backStep = 'tf3';
         nextStep = 'tf5';
       }
-      else if(this.state.componentRender === 'tf5'){
+      else if (this.state.componentRender === 'tf5') {
         backStep = 'tf4';
         nextStep = 'tf1';
       }
-      
+
       switch (this.state.componentRender) {
         case 'tf1':
           return <Tf1 />;
@@ -51,31 +51,33 @@ class MoneyTransfer extends Component {
         case 'tf4':
           return <Tf4 />;
         case 'tf5':
-          return <Tf5 />;    
+          return <Tf5 />;
         default:
           return <Tf1 />;
-      } 
+      }
     }
-    
+
     const gotoStep = step => {
-      this.setState({componentRender: step});
+      this.setState({ componentRender: step });
     }
 
     const renderButton = () => {
-      if(this.state.componentRender === 'tf5'){
+      if (this.state.componentRender === 'tf5') {
         return (<div className="wrap-button">
-        <button className="button-link" onClick={() => { liffHelper.closeWindow() }}>Back to main menu</button>
-      </div>);
-      }else {
+          <button className="button-link" onClick={() => { liffHelper.closeWindow() }}>Back to main menu</button>
+        </div>);
+      } else {
         return (<div className="wrap-button">
-        <button className="button-link" onClick={() => gotoStep(nextStep)}>Next</button>
-        <button className="button-link" onClick={() => gotoStep(backStep)}>Back</button>
-      </div> );
+          <button className="button-link" onClick={() => gotoStep(nextStep)}>Next</button>
+          <button className="button-link" onClick={() => gotoStep(backStep)}>Back</button>
+        </div>);
       }
     }
     return (
-      <div className="saving-plan">
-        <div className="col-lg-3" />
+      <div>
+        <div className="topic-header">TRANSFER</div>
+        <div className="saving-plan">
+          <div className="col-lg-3" />
           <div className="col-lg-6">
 
             {renderComponent()}
@@ -84,10 +86,11 @@ class MoneyTransfer extends Component {
               {renderButton()}
             </div>
           </div>
-        <div>
-        
+          <div>
+
+          </div>
+          <div className="col-lg-3" />
         </div>
-        <div className="col-lg-3" />
       </div>
     );
   }

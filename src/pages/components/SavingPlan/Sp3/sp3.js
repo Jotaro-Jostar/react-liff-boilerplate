@@ -2,12 +2,20 @@ import React, { Component } from 'react';
 import './style.css'
 
 class Sp3 extends Component {
+  constructor(props) {
+    super(props);
+    console.log(props);
+  }
+
+
   render() {
     return (
       <div className="wrap-sp3">
         <div className="navi-header">SET AMOUNT</div>
-        <hr/>
-        <div><input className='sp2_savingPlanInput'  placeholder="Set amount here"></input></div>
+        <hr />
+        <div>
+          <input className='sp2_savingPlanInput' placeholder="Set amount here"></input>
+        </div>
       </div>
     )
   }

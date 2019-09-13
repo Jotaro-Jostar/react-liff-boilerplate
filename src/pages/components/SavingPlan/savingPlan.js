@@ -27,11 +27,13 @@ class SavingPlan extends Component {
     let nextStep = 'sp2';
     let buttonDisp1 = "Next";
     let buttonDisp2 = "Back";
+    let buttonDisp3 = "";
     const renderComponent = () => {
       if (this.state.componentRender === 'sp1') {
         backStep = 'sp1';
         nextStep = 'sp2';
-        buttonDisp1 = "Next";
+        buttonDisp1 = "I want to set my saving goal";
+        buttonDisp2 = "Back to main menu";
       } else if (this.state.componentRender === 'sp2') {
         backStep = 'sp1';
         nextStep = 'sp3';
@@ -63,6 +65,9 @@ class SavingPlan extends Component {
       else if (this.state.componentRender === 'sp8') {
         backStep = 'sp7';
         nextStep = 'sp9';
+        buttonDisp1= "Saving plan suggestion";
+        buttonDisp2= "Back";
+        buttonDisp3= "Delete saving plan";
       }
       else if (this.state.componentRender === 'sp9') {
         backStep = 'sp8';
@@ -71,10 +76,15 @@ class SavingPlan extends Component {
       else if (this.state.componentRender === 'sp10') {
         backStep = 'sp9';
         nextStep = 'sp11';
+        buttonDisp1= "Confirm this plan";
+        buttonDisp2= "Back";
       }
       else if (this.state.componentRender === 'sp11') {
         backStep = 'sp10';
         nextStep = 'sp1';
+        buttonDisp1= "Saving plan suggestion";
+        buttonDisp2= "Back";
+        buttonDisp3= "Delete saving plan";
       }
       switch (this.state.componentRender) {
         case 'sp1':
@@ -106,6 +116,7 @@ class SavingPlan extends Component {
 
     const renderButton = () => {
       switch (this.state.componentRender) {
+        case 'sp1':
         case 'sp2':
         case 'sp3':
         case 'sp4':
@@ -118,7 +129,6 @@ class SavingPlan extends Component {
               <button className="sp1_button" onClick={() => gotoStep(backStep)}>{buttonDisp2}</button>
             </div>
           )
-        case 'sp1':
         case 'sp6':
         case 'sp7':
           return (
@@ -130,9 +140,9 @@ class SavingPlan extends Component {
         case 'sp11':
           return (
             <div className="footer">
-              <button className="sp1_button" onClick={() => gotoStep(nextStep)}>{buttonDisp1}</button>
+              <button className="sp1_button" onClick={() => gotoStep("sp9")}>{buttonDisp1}</button>
               <button className="sp1_button" onClick={() => gotoStep(backStep)}>{buttonDisp2}</button>
-              <button className="sp1_button" onClick={() => gotoStep(backStep)}>{buttonDisp2}</button>
+              <button className="sp1_button" onClick={() => gotoStep(backStep)}>{buttonDisp3}</button>
             </div>
           )
         default:

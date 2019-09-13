@@ -6,7 +6,8 @@ class Tf2 extends Component {
   render() {
     return (
       <div className="wrap-tf9">
-        <div className="navi-header" tabindex="0" >Select Transfer Option</div>
+        <div className="navi-header" tabindex="0" >SELECT TRANSFER OPTION</div>
+        <hr/>
         <div className="bg-red-savingPlan">
           <fieldset className="tf9_fieldset">
             <Form.Group as={Row}>
