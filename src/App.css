@@ -33,15 +33,15 @@
   border-radius: 1rem;
 }
 
-.bg-red-savingPlan{
-  padding: 2rem 1rem;
+.bg-red-savingPlan {
+  padding: 1rem 1rem;
   margin: 1rem 0 2rem 0;
   background-color: #ffffff;
   border-radius: 1rem;
   border-style: solid;
   border-color: #E57373;
   color: #6C6463;
-  height: 20rem;
+  min-height: 15rem;
 }
 
 

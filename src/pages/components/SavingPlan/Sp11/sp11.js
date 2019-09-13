@@ -10,7 +10,7 @@ class Sp11 extends Component {
       <div className="wrap-sp11">
       <div className="navi-header" alt={sp11_header}>{sp11_header}</div>
       <hr/>
-        <div className="sp8_container">
+        <div className="bg-red-savingPlan">
           <label alt={vacTrip1}>{vacTrip1}</label>
           <label alt={vacTrip2}>{vacTrip2}</label>
         </div>

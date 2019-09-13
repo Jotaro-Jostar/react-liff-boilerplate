@@ -10,7 +10,7 @@ class Sp8 extends Component {
       <div className="wrap-sp8">
       <div className="navi-header" alt={sp8_header}>{sp8_header}</div>
       <hr/>
-        <div className="sp8_container">
+        <div className="bg-red-savingPlan">
           <label alt={vacTrip1}>{vacTrip1}</label>
           <label alt={vacTrip2}>{vacTrip2}</label>
         </div>

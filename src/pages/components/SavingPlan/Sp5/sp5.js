@@ -8,9 +8,9 @@ class Sp5 extends Component {
         <div className="navi-header">GOAL SUMMARY</div>
         <hr/>
         <div className="bg-red-savingPlan">
-          You goal name is xxx <br />
-          Your amount to save is xxx <br />
-          Your target date is xxx <br />
+          You goal name is Vacation<br />
+          Your amount to save is 5000<br />
+          Your target date is 20 September 2019<br />
         </div>
       </div>
     )

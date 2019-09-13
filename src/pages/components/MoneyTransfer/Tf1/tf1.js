@@ -5,7 +5,8 @@ class Tf1 extends Component {
   render() {
     return (
       <div className="wrap-tf1">
-        <div className="navi-header" tabindex="0" >Transfer</div>
+        <div className="navi-header" tabindex="0" >OVERVIEW</div>
+        <hr/>
         <div className="bg-red-savingPlan">You are about to transfer money from primary account which balance is <b>15,000 THB</b></div>
       </div>
     )

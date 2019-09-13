@@ -7,7 +7,7 @@ class Sp1 extends Component {
       <div className="wrap-sp1">
         <div className="navi-header">CREATE NEW SAVING GOAL</div>
         <hr/>
-        <div className="bg-red-savingPlan">I want to set my saving goal</div>
+        <div className="bg-red-savingPlan">You don't have your saving goal yet.</div>
       </div>
     )
   }
